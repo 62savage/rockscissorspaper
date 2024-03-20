@@ -12,3 +12,15 @@
   width: 400px;
   height: 400px;
 }
+
+.tie {
+  border: 5px solid black;
+}
+
+.win {
+  border: 5px solid green;
+}
+
+.lose {
+  border: 5px solid red;
+}
