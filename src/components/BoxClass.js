@@ -3,29 +3,21 @@ import { Component } from "react";
 export default class BoxClass extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      boxResult: "",
-    };
+    this.boxResult = "";
   }
 
-  componentDidMount() {
-    let boxResult;
+  render() {
     if (
       this.props.title === "Computer" &&
       this.props.result !== "tie" &&
       this.props.result !== ""
     ) {
-      boxResult = this.props.result === "win" ? "lose" : "win";
+      this.boxResult = this.props.result === "win" ? "lose" : "win";
     } else {
-      boxResult = this.props.result;
+      this.boxResult = this.props.result;
     }
-
-    this.setState({ boxResult });
-  }
-
-  render() {
     return (
-      <div className={`box ${this.props.result && this.props.boxResult}`}>
+      <div className={`box ${this.props.result && this.boxResult}`}>
         <h1>{this.props.title}</h1>
         <img
           src={this.props.item && this.props.item.img}
